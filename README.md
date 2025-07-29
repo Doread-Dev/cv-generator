@@ -33,7 +33,9 @@ _Coming soon_
 
 ```bash
 git clone https://github.com/Doread-Dev/cv-generator
-cd cv-generator
+cd .//cv-generator//client
+npm install
+cd ..//server
 npm install
 npm run dev
 ```
