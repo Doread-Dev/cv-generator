@@ -1,0 +1,250 @@
+.pageContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 24px 48px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--white);
+  z-index: 100;
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: none;
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: all 0.3s ease;
+}
+
+.backBtn:hover {
+  background: var(--gray-light);
+}
+
+.backIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.pageTitle {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  font-weight: 700;
+  flex-grow: 1;
+}
+
+/* Main Content */
+.mainContent {
+  padding: 60px 48px;
+  flex-grow: 1;
+  position: relative;
+}
+
+/* Template Grid */
+.templatesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.templateCard {
+  border: var(--border);
+  padding: 20px;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.templateCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.templatePreview {
+  height: 350px;
+  background: var(--gray-light);
+  border: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.templateName {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.chooseBtn {
+  padding: 12px 24px;
+  background: transparent;
+  border: var(--border);
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  text-align: center;
+  text-decoration: none;
+  color: var(--black);
+  display: block;
+}
+
+.chooseBtn:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+/* Resume Preview Mockups */
+.resumeMockup {
+  width: 85%;
+  height: 95%;
+  background: var(--white);
+  border: var(--border);
+  position: relative;
+  overflow: hidden;
+  padding: 15px;
+}
+
+.resumeHeader {
+  border-bottom: var(--border);
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.resumeName {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.resumeTitle {
+  font-size: 14px;
+  color: var(--gray-dark);
+  margin-top: 4px;
+}
+
+.resumeSection {
+  margin-bottom: 12px;
+}
+
+.sectionTitle {
+  font-weight: 700;
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+
+.sectionContent {
+  font-size: 12px;
+  color: var(--gray-dark);
+}
+
+.resumeLine {
+  height: 1px;
+  background: var(--black);
+  margin: 5px 0;
+}
+
+.resumeLine.short {
+  width: 50%;
+}
+
+.resumeLine.medium {
+  width: 70%;
+}
+
+.resumeLine.long {
+  width: 90%;
+}
+
+.illustration {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 180px;
+  height: 180px;
+  z-index: -1;
+  opacity: 0.9;
+}
+
+.footer {
+  padding: 40px 48px;
+  border-top: var(--border);
+  text-align: center;
+  color: var(--gray-dark);
+  font-size: 14px;
+  margin-top: auto;
+}
+
+.inkSplash {
+  position: absolute;
+  opacity: 0.05;
+  z-index: -1;
+}
+
+.splash1 {
+  top: 10%;
+  left: 5%;
+  width: 200px;
+  height: 200px;
+  transform: rotate(45deg);
+}
+
+.splash2 {
+  bottom: 20%;
+  right: 15%;
+  width: 150px;
+  height: 150px;
+  transform: rotate(185deg);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .templatesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 20px;
+  }
+  
+  .mainContent {
+    padding: 40px 20px;
+  }
+  
+  .templatesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .pageTitle {
+    font-size: 24px;
+  }
+  
+  .illustration {
+    display: none;
+  }
+}

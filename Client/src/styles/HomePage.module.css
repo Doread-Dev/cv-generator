@@ -1,0 +1,395 @@
+.dashboard {
+  display: flex;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcomeSection {
+  flex: 1;
+  background: var(--white);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 80px 60px;
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+}
+
+.cvsSection {
+  flex: 1;
+  background: var(--gray-light);
+  position: relative;
+  padding: 80px 60px 60px 200px;
+  overflow-y: auto;
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.topNav {
+  position: absolute;
+  top: 24px;
+  right: 48px;
+  display: flex;
+  gap: 15px;
+  z-index: 100;
+}
+
+.profileBtn {
+  padding: 8px 20px;
+  background: transparent;
+  border: var(--border);
+  border-radius: 30px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profileBtn:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.profileBtn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.welcomeContent {
+  max-width: 550px;
+  margin-top: 60px;
+  position: relative;
+  z-index: 3;
+}
+
+.welcomeHeading {
+  font-family: "Playfair Display", serif;
+  font-size: 52px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+
+.welcomeText {
+  font-size: 18px;
+  margin-bottom: 40px;
+  max-width: 90%;
+  color: var(--gray-dark);
+  line-height: 1.8;
+}
+
+.generateBtn {
+  padding: 16px 40px;
+  background: transparent;
+  border: var(--border);
+  border-radius: 0;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.generateBtn:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.cvsHeader {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  margin-bottom: 40px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.cvsHeader::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  height: 70%;
+  width: 4px;
+  background: var(--black);
+}
+
+.cvList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  padding-right: 20px;
+}
+
+.cvCard {
+  border: var(--border);
+  padding: 25px;
+  background: var(--white);
+  position: relative;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.cvCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.cvTitle {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.cvDate {
+  color: var(--gray-dark);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.cardActions {
+  display: flex;
+  gap: 12px;
+}
+
+.cardBtn {
+  padding: 8px 16px;
+  background: transparent;
+  border: var(--border);
+  border-radius: 0;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  text-align: center;
+}
+
+.cardBtn:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.profilePanel {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  width: 380px;
+  height: 100%;
+  background: var(--white);
+  z-index: 200;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+  transition: right 0.4s ease;
+  padding: 40px 30px;
+  border-left: var(--border);
+  overflow-y: auto;
+}
+
+.profilePanelActive {
+  right: 0;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.closeBtn:hover {
+  background: var(--gray-light);
+}
+
+.userInfo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.userAvatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: var(--border);
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  background: var(--gray-light);
+}
+
+.userName {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.userEmail {
+  color: var(--gray-dark);
+  font-size: 16px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns:  1fr;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.statCard {
+  border: var(--border);
+  padding: 20px;
+  text-align: center;
+}
+
+.statValue {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.statLabel {
+  color: var(--gray-dark);
+  font-size: 14px;
+}
+
+.panelActions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.panelBtn {
+  padding: 12px;
+  background: transparent;
+  border: var(--border);
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.panelBtn:hover {
+  background: var(--black);
+  color: var(--white);
+}
+
+.character {
+  position: absolute;
+  opacity: 0.08;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.character1 {
+  top: 10%;
+  left: 5%;
+  width: 120px;
+  height: 120px;
+}
+
+.character2 {
+  bottom: 10%;
+  left: 20%;
+  width: 100px;
+  height: 100px;
+}
+
+.character3 {
+  top: 15%;
+  right: 25%;
+  width: 90px;
+  height: 90px;
+}
+
+.character4 {
+  bottom: 20%;
+  right: 15%;
+  width: 80px;
+  height: 80px;
+}
+
+@media (max-width: 1024px) {
+  .dashboard {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .welcomeSection,
+  .cvsSection {
+    clip-path: none;
+    padding: 100px 30px 60px;
+    min-height: 50vh;
+  }
+
+  .welcomeContent {
+    max-width: 100%;
+    margin-top: 0;
+  }
+
+  .character {
+    opacity: 0.05;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcomeHeading {
+    font-size: 42px;
+  }
+
+  .welcomeSection,
+  .cvsSection {
+    padding: 80px 20px 40px;
+  }
+
+  .cvList {
+    grid-template-columns: 1fr;
+  }
+
+  .topNav {
+    right: 20px;
+  }
+
+  .profilePanel {
+    width: 100%;
+    right: -100%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .welcomeSection {
+    padding: 100px 120px 100px 100px;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+  }
+  .cvsSection {
+    padding: 100px 100px 100px 320px;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .cvList {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+}
