@@ -62,6 +62,7 @@ const HomePage = () => {
 
   return (
     <div className={styles.dashboard}>
+      {/* Top Navigation */}
       <div className={styles.topNav}>
         <button
           className={styles.profileBtn}
@@ -89,6 +90,7 @@ const HomePage = () => {
         </button>
       </div>
 
+      {/* Welcome Section */}
       <div className={styles.welcomeSection}>
         <div className={styles.welcomeContent}>
           <h1 className={styles.welcomeHeading}>
@@ -109,7 +111,9 @@ const HomePage = () => {
         </div>
       </div>
 
+      {/* CVs Section */}
       <div className={styles.cvsSection}>
+        {/* Decorative Characters */}
         <div className={`${styles.character} ${styles.character1}`}>
           <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
             <circle
@@ -189,31 +193,39 @@ const HomePage = () => {
           </svg>
         </div>
 
-        <h2 className={styles.cvsHeader}>Your CVs</h2>
-        <div className={styles.cvList}>
-          {userCVs.map((cv, index) => (
-            <div key={index} className={styles.cvCard}>
-              <h3 className={styles.cvTitle}>
-                {cv.personalInfo.professionalTitle}
-              </h3>
-              <p className={styles.cvDate}>
-                Created:{" "}
-                {new Date(cv.createdAt).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </p>
-              <div className={styles.cardActions}>
-                <button className={styles.cardBtn} onClick={handleViewEdit}>
-                  View/Edit
-                </button>
-              </div>
+        {/* Conditional Rendering for CVs */}
+        {userCVs.length === 0 ? (
+          <h2 className={styles.cvsHeader2}>Create Your CVs to appear here.</h2>
+        ) : (
+          <>
+            <h2 className={styles.cvsHeader}>Your CVs</h2>
+            <div className={styles.cvList}>
+              {userCVs.map((cv, index) => (
+                <div key={index} className={styles.cvCard}>
+                  <h3 className={styles.cvTitle}>
+                    {cv.personalInfo.professionalTitle}
+                  </h3>
+                  <p className={styles.cvDate}>
+                    Created:{" "}
+                    {new Date(cv.createdAt).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </p>
+                  <div className={styles.cardActions}>
+                    <button className={styles.cardBtn} onClick={handleViewEdit}>
+                      View/Edit
+                    </button>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </>
+        )}
       </div>
 
+      {/* Profile Panel */}
       <div
         className={`${styles.profilePanel} ${
           panelActive ? styles.profilePanelActive : ""
