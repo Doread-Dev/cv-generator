@@ -18,7 +18,7 @@ A modern CV generator powered by AI API's, built to help users create clean, pro
 ## 🛠️ Tech Stack
 
 - **Frontend:** React.js, Tailwind CSS
-- **AI Integration:** OpenAI API
+- **AI Integration:** KIMI & gemini & qwen API
 - **Tools:** Git, GitHub, VS Code
 
 ---
